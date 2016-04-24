@@ -2,9 +2,8 @@ FROM python:2
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
 RUN pip install -I flexget transmissionrpc \
-    && groupadd -r users -g 100 \
-    && useradd -u 999 -r -g users -d /conf -s /sbin/nologin -c "flexget user" flexget \
-    && chown -R flexget:users /conf \
+    && useradd -u 999 -r -g 100 -d /conf -s /sbin/nologin -c "flexget user" flexget \
+    && chown -R flexget:100 /conf \
     && chmod 755 /conf
 
 VOLUME /conf
