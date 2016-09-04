@@ -1,6 +1,8 @@
 FROM python:2
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
+# latest version from here: https://pypi.python.org/pypi/FlexGet
+
 RUN pip install -I 'flexget==2.0.14' transmissionrpc \
     && useradd -u 999 -r -g 100 -m -d /home/flexget -s /sbin/nologin -c "flexget user" flexget \
     && chown -R flexget:100 /home/flexget \
