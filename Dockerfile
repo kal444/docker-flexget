@@ -2,7 +2,7 @@ FROM python:2
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
 # latest version from here: https://pypi.python.org/pypi/FlexGet
-ENV FLEXGET_VERSION=2.3.21
+ENV FLEXGET_VERSION=2.9.9
 
 RUN pip install -I "flexget==${FLEXGET_VERSION}" \
     transmissionrpc \
@@ -18,4 +18,4 @@ VOLUME /data
 
 USER flexget
 ENTRYPOINT ["/usr/local/bin/flexget", "-c", "/conf/config.yml"]
-CMD ["--loglevel", "info", "daemon", "start"]
+CMD ["--loglevel", "info", "daemon", "start", "--autoreload-config"]
