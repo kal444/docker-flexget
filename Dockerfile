@@ -2,7 +2,7 @@ FROM python:2
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
 # latest version from here: https://pypi.python.org/pypi/FlexGet
-ENV FLEXGET_VERSION=2.9.9
+ENV FLEXGET_VERSION=2.10.96
 
 RUN pip install -I "flexget==${FLEXGET_VERSION}" \
     transmissionrpc \
